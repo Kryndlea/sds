@@ -1,0 +1,42 @@
+name: sds
+channels:
+  - conda-forge
+dependencies:
+  - python ==3.12.*
+  # to run the code
+  - astropy >=6
+  - contextily >=1.6
+  - datashader >=0.16
+  - esda >=2.7
+  - geocube >=0.5
+  - geopandas >=1.0
+  - geopy >=2.4
+  - h3-py >=3.7
+  - httpx >=0.27
+  - libpysal >=4.12.0
+  - mgwr >=2.2
+  - openpyxl >=3.1
+  - osmnx >=1.9
+  - pandas >=2.2
+  - pointpats >=2.4
+  - pyarrow >=17
+  - pyinterpolate >=0.5
+  - pyogrio >=0.9
+  - rasterio >=1.4.0
+  - rioxarray >=0.17
+  - scikit-learn >=1.6
+  - seaborn >=0.13
+  - spglm >=1.1
+  - spreg >=1.4
+  - statsmodels >=0.14
+  - tobler >=0.11.3
+  - xarray >=2024.7
+  - xvec >=0.3
+  - dask-expr >=1
+  # infrastructure
+  - ipykernel
+  - jupyter-cache
+  - jupyterlab
+  - pip
+  - pip:
+      - KDEpy
