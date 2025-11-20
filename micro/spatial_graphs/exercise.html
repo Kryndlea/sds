@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -95,9 +95,9 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f16cd255ecb5ae9510f6a112aa2ee9ab.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f3afb4d828d77514a78ff08d52625b9d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f16cd255ecb5ae9510f6a112aa2ee9ab.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ac1a48248070c8bfbae4244efd7728e4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5fa770aa67c23ef3364642465cd873db.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ac1a48248070c8bfbae4244efd7728e4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-1cb99e5faa8df9499aa296ac4cd75a96.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -760,7 +760,7 @@ div.csl-indent {
 <p>It is time to work with spatial weights matrices by yourself.</p>
 <section id="zones-of-suburbanisation" class="level2">
 <h2 class="anchored" data-anchor-id="zones-of-suburbanisation">Zones of suburbanisation</h2>
-<p>You are familiar with Prague from the last section, so let’s zoom out to zones of suburbanisation around Prague and other Czech cities. Head over to the <a href="https://datahub.natur.cuni.cz">DataHub</a> of the Faculty of Science and download the dataset called <a href="https://datahub.natur.cuni.cz/datasets/zóny-rezidenční-suburbanizace-2008-2016/explore">“Zóny rezidenční suburbanizace 2008-2016”</a> containing the zones of residential suburbanisation outlined by <span class="citation" data-cites="ouvrednivcek2019between">Ouřednı́ček, Klsák, and Špačková (<a href="#ref-ouvrednivcek2019between" role="doc-biblioref">2019</a>)</span>. Download the dataset and open it with <code>geopandas</code>. Use <code>"OBJECTID"</code> column as an index (other feasible columns are not unique - they contain duplicated entries).</p>
+<p>You are familiar with Prague from the last section, so let’s zoom out to zones of suburbanisation around Prague and other Czech cities. Head over to the <a href="https://datahub.natur.cuni.cz">DataHub</a> of the Faculty of Science and download the dataset called <a href="https://datahub.natur.cuni.cz/datasets/zóny-rezidenční-suburbanizace-2008-2016/explore">“Zóny rezidenční suburbanizace 2008-2016”</a> containing the zones of residential suburbanisation outlined by <span class="citation" data-cites="ouvrednivcek2019between">Ouřednı́ček, Klsák, and Špačková (<a href="#ref-ouvrednivcek2019between" role="doc-biblioref">2019</a>)</span>. Download the dataset and open it with <code>geopandas</code>. Ensure that you are using a column with unique values as an index.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -781,7 +781,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="interaction-with-graphs">Interaction with Graphs</h3>
 <ol type="1">
 <li>Create a contiguity matrix using the Queen criterion</li>
-<li>Let’s focus on Prague (ID <code>891</code> in the table). How many neighbours does it have?</li>
+<li>Let’s focus on Prague. How many neighbours does it have?</li>
 <li>Reproduce the previous section’s zoom plot with Prague and its neighbours. Can you make that plot as both static and interactive maps?</li>
 <li>Create a block spatial weights matrix where every geometry is connected to other geometries in the NUTS2 region.</li>
 <li>Create KNN weights with 5 neighbours. Remember that KNN expects point geometry.</li>
