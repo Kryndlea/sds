@@ -61,9 +61,10 @@ be imported as `sklearn`.
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 import seaborn as sns
 from libpysal import graph
-from sklearn import cluster
+from sklearn import cluster, decomposition, preprocessing
 ```
 
 
@@ -353,6 +354,90 @@ other methods that may provide a better understanding of cluster behaviour, like
 [clustergram](https://clustergram.readthedocs.io/en/stable/) or a
 [silhouette analysis](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html),
 both of which are out of scope of this material.
+
+## Dimensionality reduction
+
+Algorithms like K-Means are trying to find clusters in the multidimensional space formed by individual variables. When there are too many dimensions, the algorithm starts to struggle and the resulting clusters are not as precise as they could be. We have selected a subset of variables from SIMD, but there are cases when you don't know which variables to select. In those cases, you can use techniques for variable selection or dimensionality reduction. We don't really have space to explore all the details, but let's showcase one application: principal component analysis (PCA).
+
+PCA is a linear method that combines your X variables into Y components, attempting to combine them in a way that retains as much variance of the original data as possible.
+
+Use all the numeric columns in SIMD to try it out and to check their original pairwise correlations.
+
+```{python}
+# | fig-cap: Pairwise correlations
+numeric = simd.select_dtypes('number').drop(
+    columns=['SAPE2017', 'WAPE2017', 'Shape_Leng', 'Shape_Area', 'kmeans_5']
+)
+sns.heatmap(numeric.corr(), cmap="RdBu_r")
+```
+
+PCA requires standardised data, as K-Means does. The subranks are standardised, but now we are using everything, so we'd better rescale the data.
+
+```{python}
+scaler = preprocessing.StandardScaler()
+numeric_scaled = scaler.fit_transform(numeric)
+```
+
+Now we can fit the PCA, initially with the number of components equal to our number of variables. We need this to understand what the optimal number of components is.
+
+```{python}
+pca = decomposition.PCA(n_components=numeric.shape[1])
+pca.fit(numeric_scaled)
+```
+
+Each resulting component explains a portion of the original variance:
+
+```{python}
+# | fig-cap: Variance explained by components
+pd.Series(pca.explained_variance_ratio_).plot.bar()
+```
+
+This information helps us identify the optimal number of components. While there are multiple methods, the simplest one is to select components that together explain at least 80% of the original variance.
+
+```{python}
+# | fig-cap: Cumulative variance explained by components
+ax = pd.Series(pca.explained_variance_ratio_).cumsum().plot()
+ax.axhline(0.8, color='red', linestyle='dotted')
+```
+
+In our case, that is 6 components. We can now fit the final PCA with 6 components only.
+
+```{python}
+pca6 = decomposition.PCA(n_components=6)
+pca6.fit(numeric_scaled)
+```
+
+Each component is a linear combination of the original variables. You can check which variables affect which components (and potentially interpret those components) by showing the component loadings.
+
+```{python}
+pd.DataFrame(
+    pca6.components_.T * np.sqrt(pca6.explained_variance_),
+    index = numeric.columns,
+    ).style.background_gradient(cmap="RdBu_r")
+```
+
+With PCA ready, you can use it to transform the original data to their principal components.
+
+```{python}
+pca_variables = pca6.transform(numeric.values)
+```
+
+This can now be used as an input for clustering in a similar way to how we used a subset of the original variables above.
+
+```{python}
+kmeans_pca = cluster.KMeans(n_clusters=5, random_state=42)
+kmeans_pca.fit(pca_variables)
+```
+
+The result should be very similar because we are using similar data. But if you find yourself in a situation where your dataset contains 100+ variables, all of which are equally important (e.g. census data), PCA is here to help.
+
+```{python}
+simd["kmeans_pca"] = kmeans_pca.labels_
+
+simd[["kmeans_pca", 'geometry']].explore(
+    "kmeans_pca", categorical=True, tiles="OpenStreetMap HOT"
+)
+```
 
 ## Spatially-lagged clustering
 
