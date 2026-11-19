@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Spatial data old and new – Spatial Data Science for Social Geography</title>
+<title>Open source inside out – Spatial Data Science</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -24,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -52,22 +57,21 @@ div.csl-indent {
 <meta name="quarto:offset" content="../">
 <link href="../geographic_data/hands_on.html" rel="next">
 <link href="../data_wrangling/quiz.html" rel="prev">
-<link href="../_assets/favicon.png" rel="icon" type="image/png">
+<link href="../_assets/favicon_micro.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ac1a48248070c8bfbae4244efd7728e4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5fa770aa67c23ef3364642465cd873db.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ac1a48248070c8bfbae4244efd7728e4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9bbf5fa004a0676d7f26111dc3fdfdb2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a80805fb9204df0454a85aec670eb5fe.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9bbf5fa004a0676d7f26111dc3fdfdb2.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1cb99e5faa8df9499aa296ac4cd75a96.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-948526ab9cde9517ac9fd7d69a164a89.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-1cb99e5faa8df9499aa296ac4cd75a96.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-fce8334f7bc4c84bf0b5bc71e39b1717.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e84f81d501f03ac1befade48b70af7c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-fce8334f7bc4c84bf0b5bc71e39b1717.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -98,7 +102,7 @@ div.csl-indent {
 
 
 <link rel="stylesheet" href="../_assets/styles.css">
-<meta name="twitter:title" content="Spatial data old and new – Spatial Data Science for Social Geography">
+<meta name="twitter:title" content="Open source inside out – Spatial Data Science">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
@@ -274,7 +278,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geographic_data/concepts.html">Spatial data</a></li><li class="breadcrumb-item"><a href="../geographic_data/concepts.html">Spatial data old and new</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geographic_data/concepts.html">Spatial data</a></li><li class="breadcrumb-item"><a href="../geographic_data/concepts.html">Open source inside out</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -413,7 +417,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geographic_data/concepts.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Spatial data old and new</span></a>
+ <span class="menu-text">Open source inside out</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -474,12 +478,47 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Exploratory spatial data analysis</span></a>
+ <span class="menu-text">Spatial networks</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_networks/concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessibility graphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_networks/hands_on.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spatial accessibility and interaction through networks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_networks/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessible Brno</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_networks/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz on spatial networks</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exploratory spatial data analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../autocorrelation/concepts.html" class="sidebar-item-text sidebar-link">
@@ -508,13 +547,13 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Point patterns</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../point_patterns/concepts.html" class="sidebar-item-text sidebar-link">
@@ -543,13 +582,13 @@ div.csl-indent {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Clustering</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../clustering/concepts.html" class="sidebar-item-text sidebar-link">
@@ -572,41 +611,6 @@ div.csl-indent {
   <div class="sidebar-item-container"> 
   <a href="../clustering/quiz.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quiz on spatial autocorrelation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
- <span class="menu-text">Raster data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../raster_data/concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data as a grid</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../raster_data/hands_on.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Population as a raster grid</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../raster_data/exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Learning xarray</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../raster_data/quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quiz on raster data</span></a>
   </div>
 </li>
       </ul>
@@ -751,27 +755,60 @@ div.csl-indent {
 </li>
       </ul>
   </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+ <span class="menu-text">Additional material</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Raster data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../raster_data/concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data as a grid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../raster_data/hands_on.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Population as a raster grid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../raster_data/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning xarray</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../raster_data/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz on raster data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/martinfleis/sds/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geographic_data/concepts.html">Spatial data</a></li><li class="breadcrumb-item"><a href="../geographic_data/concepts.html">Spatial data old and new</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../geographic_data/concepts.html">Spatial data</a></li><li class="breadcrumb-item"><a href="../geographic_data/concepts.html">Open source inside out</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Spatial data old and new</h1>
+<h1 class="title">Open source inside out</h1>
 </div>
 
 
@@ -788,7 +825,7 @@ div.csl-indent {
 </header>
 
 
-<p>Slides from the talk about the nature of <em>old</em> spatial data and <em>new</em> spatial data, adapted from <span class="citation" data-cites="darribas_gds_course">Dani Arribas-Bel (<a href="#ref-darribas_gds_course" role="doc-biblioref">2019</a>)</span>, drawing from the work of <span class="citation" data-cites="lazer2017data">Lazer and Radford (<a href="#ref-lazer2017data" role="doc-biblioref">2017</a>)</span> and <span class="citation" data-cites="ArribasBel201445">Daniel Arribas-Bel (<a href="#ref-ArribasBel201445" role="doc-biblioref">2014</a>)</span>.</p>
+<p>Get a bit of insight into how free and open source software actually works.</p>
 <iframe class="slide-deck" src="slides.html"></iframe>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -800,29 +837,16 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Parts of the chapter <a href="https://geographicdata.science/book/notebooks/03_spatial_data.html"><em>Spatial Data</em></a> dealing with tabular data from the Geographic Data Science with Python by <span class="citation" data-cites="rey2023geographic">Rey, Arribas-Bel, and Wolf (<a href="#ref-rey2023geographic" role="doc-biblioref">2023</a>)</span>.</p>
+<p>Parts of the chapter <a href="https://geographicdata.science/book/notebooks/03_spatial_data.html"><em>Spatial Data</em></a> dealing with tabular data from the Geographic Data Science with Python by <span class="citation" data-cites="rey2023geographic">Rey et al. (<a href="#ref-rey2023geographic" role="doc-biblioref">2023</a>)</span>.</p>
 </div>
 </div>
 
 
-<div id="quarto-appendix" class="default"><section id="acknowledgements" class="level2 appendix"><h2 class="anchored quarto-appendix-heading">Acknowledgements</h2><div class="quarto-appendix-contents">
-
-<p>This section is derived from <em>A Course on Geographic Data Science</em> by <span class="citation" data-cites="darribas_gds_course">Dani Arribas-Bel (<a href="#ref-darribas_gds_course" role="doc-biblioref">2019</a>)</span>, licensed under CC-BY-SA 4.0.</p>
 
 
-
-</div></section><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-darribas_gds_course" class="csl-entry" role="listitem">
-Arribas-Bel, Dani. 2019. <span>“A Course on Geographic Data Science.”</span> <em>The Journal of Open Source Education</em> 2 (14). <a href="https://doi.org/10.21105/jose.00042">https://doi.org/10.21105/jose.00042</a>.
-</div>
-<div id="ref-ArribasBel201445" class="csl-entry" role="listitem">
-Arribas-Bel, Daniel. 2014. <span>“Accidental, Open and Everywhere: Emerging Data Sources for the Understanding of Cities.”</span> <em>Applied Geography</em> 49: 45–53. <a href="https://doi.org/10.1016/j.apgeog.2013.09.012">https://doi.org/10.1016/j.apgeog.2013.09.012</a>.
-</div>
-<div id="ref-lazer2017data" class="csl-entry" role="listitem">
-Lazer, David, and Jason Radford. 2017. <span>“Data Ex Machina: Introduction to Big Data.”</span> <em>Annual Review of Sociology</em> 43 (1): 19–39.
-</div>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-rey2023geographic" class="csl-entry" role="listitem">
-Rey, Sergio, Dani Arribas-Bel, and Levi John Wolf. 2023. <em>Geographic Data Science with Python</em>. Chapman &amp; Hall/CRC Texts in Statistical Science. London, England: Taylor &amp; Francis.
+Rey, Sergio, Dani Arribas-Bel, and Levi John Wolf. 2023. <em>Geographic Data Science with Python</em>. Chapman &amp; Hall/CRC Texts in Statistical Science. Taylor &amp; Francis.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1258,7 +1282,7 @@ Rey, Sergio, Dani Arribas-Bel, and Levi John Wolf. 2023. <em>Geographic Data Sci
     </div>   
     <div class="nav-footer-center">
 <p>Course material by <a href="https://martinfleischmann.net">Martin Fleischmann</a>. Available under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
-<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/martinfleis/sds/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/martinfleis/sds/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

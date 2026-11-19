@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<link href="../_assets/favicon.png" rel="icon" type="image/png">
+<link href="../_assets/favicon_micro.png" rel="icon" type="image/png">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.19">
 
-  <title>Spatial Data Science for Social Geography – Explore space!</title>
+  <title>Spatial Data Science – Explore space!</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -29,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2d48035a586b5cc1cf8402347ddc1623.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bcb63ddb269dec6f12f75062d003f611.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -121,7 +127,7 @@
       margin-right: 0; 
     }
   </style>
-<meta name="twitter:title" content="Explore space! – Spatial Data Science for Social Geography">
+<meta name="twitter:title" content="Explore space! – Spatial Data Science">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-light">
@@ -255,9 +261,40 @@
 
 <h3 id="positive">Positive</h3>
 <p>Similar values close to each other (high-high, low-low)</p>
+</section>
+<section class="slide level2">
+
+<div id="575feb47" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-3-output-1.png" width="696" height="397"></p>
+<figcaption>Positive spatial autocorrelation (% of Black population in 1960)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="positive-1">Positive</h3>
+<p>Similar values close to each other (high-high, low-low)</p>
 <div class="fragment fade-in">
 <h3 id="negative">Negative</h3>
 <p>Similar values far from each other (high-low)</p>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="f9b20aa2" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-4-output-1.png" width="688" height="402"></p>
+<figcaption>Negative spatial autocorrelation (greedy colouring)</figcaption>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2">
@@ -271,12 +308,51 @@
 </section>
 <section class="slide level2">
 
-<div id="29b0675c" class="cell" data-execution_count="2">
+<div id="7a1151af" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slides_files/figure-revealjs/cell-3-output-1.png" width="510" height="503"></p>
-<figcaption>Moran Plot</figcaption>
+<p><img data-src="slides_files/figure-revealjs/cell-5-output-1.png" width="510" height="449"></p>
+<figcaption>Moran Plot of % of Black population in 1960</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="ad39e574" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-6-output-1.png" width="449" height="449"></p>
+<figcaption>Moran Plot of greedy colouring</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="8ffcf75f" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-7-output-1.png" width="699" height="390"></p>
+<figcaption>No spatial autocorrelation (random values)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="79c3f26c" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-8-output-1.png" width="760" height="449"></p>
+<figcaption>Moran Plot of random values</figcaption>
 </figure>
 </div>
 </div>
@@ -287,6 +363,19 @@
 <p><span class="fragment fade-in">Formal test of global spatial autocorrelation</span></p>
 <p><span class="fragment fade-in">Statistically identify the presence of clustering in a variable</span></p>
 <p><span class="fragment fade-in">Slope of the Moran plot</span></p>
+</section>
+<section class="slide level2">
+
+<div id="6151f5c8" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-9-output-1.png" width="971" height="223"></p>
+<figcaption>Moran’s I across three variables</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="local-spatial-autocorrelation" class="title-slide slide level1 center">
@@ -323,6 +412,58 @@
 <h4 id="local-indicators-of-spatial-association">Local Indicators of Spatial Association</h4>
 <p><span class="fragment fade-in">Statistical tests for spatial cluster detection</span></p>
 <p><span class="fragment fade-in">Compares the observed map with many randomly generated ones to see how likely it is to obtain the observed associations for each location</span></p>
+</section>
+<section class="slide level2">
+
+<div id="b1711c75" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-10-output-1.png" width="971" height="251"></p>
+<figcaption>LISA of % of Black population in 1960</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="f2b64739" class="cell" data-execution_count="10">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-11-output-1.png" width="510" height="449"></p>
+<figcaption>Moran Plot of % of Black population in 1960 with highlighted LISA clusters</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="38ddbf1b" class="cell" data-execution_count="11">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-12-output-1.png" width="971" height="251"></p>
+<figcaption>LISA of random values</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="9e710834" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slides_files/figure-revealjs/cell-13-output-1.png" width="971" height="251"></p>
+<figcaption>LISA of greedy colouring</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 

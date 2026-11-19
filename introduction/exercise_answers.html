@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tobler’s first law of geography – Spatial Data Science for Social Geography</title>
+<title>Tobler’s first law of geography – Spatial Data Science</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -65,22 +71,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../_assets/favicon.png" rel="icon" type="image/png">
+<link href="../_assets/favicon_micro.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ac1a48248070c8bfbae4244efd7728e4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5fa770aa67c23ef3364642465cd873db.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ac1a48248070c8bfbae4244efd7728e4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9bbf5fa004a0676d7f26111dc3fdfdb2.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a80805fb9204df0454a85aec670eb5fe.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-9bbf5fa004a0676d7f26111dc3fdfdb2.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1cb99e5faa8df9499aa296ac4cd75a96.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-948526ab9cde9517ac9fd7d69a164a89.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-1cb99e5faa8df9499aa296ac4cd75a96.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-fce8334f7bc4c84bf0b5bc71e39b1717.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e84f81d501f03ac1befade48b70af7c6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-fce8334f7bc4c84bf0b5bc71e39b1717.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../_assets/styles.css">
-<meta name="twitter:title" content="Tobler’s first law of geography – Spatial Data Science for Social Geography">
+<meta name="twitter:title" content="Tobler’s first law of geography – Spatial Data Science">
 <meta name="twitter:description" content="">
 <meta name="twitter:card" content="summary">
 </head>
@@ -426,7 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../geographic_data/concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spatial data old and new</span></a>
+ <span class="menu-text">Open source inside out</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -487,12 +492,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Exploratory spatial data analysis</span></a>
+ <span class="menu-text">Spatial networks</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_networks/concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessibility graphs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_networks/hands_on.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Spatial accessibility and interaction through networks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_networks/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessible Brno</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_networks/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz on spatial networks</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Exploratory spatial data analysis</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../autocorrelation/concepts.html" class="sidebar-item-text sidebar-link">
@@ -521,13 +561,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
  <span class="menu-text">Point patterns</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../point_patterns/concepts.html" class="sidebar-item-text sidebar-link">
@@ -556,13 +596,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Clustering</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../clustering/concepts.html" class="sidebar-item-text sidebar-link">
@@ -585,41 +625,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../clustering/quiz.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Quiz on spatial autocorrelation</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
- <span class="menu-text">Raster data</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../raster_data/concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data as a grid</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../raster_data/hands_on.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Population as a raster grid</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../raster_data/exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Learning xarray</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../raster_data/quiz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quiz on raster data</span></a>
   </div>
 </li>
       </ul>
@@ -764,6 +769,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+ <span class="menu-text">Additional material</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+ <span class="menu-text">Raster data</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../raster_data/concepts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data as a grid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../raster_data/hands_on.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Population as a raster grid</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../raster_data/exercise.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learning xarray</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../raster_data/quiz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quiz on raster data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -774,10 +818,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a>
-  <ul class="collapse">
-  <li><a href="#three-forms-of-spatial-interpolation." id="toc-three-forms-of-spatial-interpolation." class="nav-link" data-scroll-target="#three-forms-of-spatial-interpolation.">Three forms of spatial interpolation.</a></li>
-  </ul></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
   <li><a href="#foundation" id="toc-foundation" class="nav-link" data-scroll-target="#foundation">Foundation</a></li>
   <li><a href="#controversy" id="toc-controversy" class="nav-link" data-scroll-target="#controversy">Controversy</a></li>
   <li><a href="#play-with-the-math-module-to-build-muscle-memory" id="toc-play-with-the-math-module-to-build-muscle-memory" class="nav-link" data-scroll-target="#play-with-the-math-module-to-build-muscle-memory">Play with the <code>math</code> module to build muscle memory</a></li>
@@ -809,6 +850,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><em>From Wikipedia, the free encyclopedia</em></p>
 <p>The&nbsp;<strong>First Law of Geography</strong>, according to&nbsp;<a href="https://en.wikipedia.org/wiki/Waldo_Tobler">Waldo Tobler</a>, is “<a href="https://en.wikiquote.org/wiki/Waldo_Tobler">everything is related to everything else, but near things are more related than distant things.</a>”<a href="https://en.wikipedia.org/wiki/Tobler's_first_law_of_geography#cite_note-Tobler1-1">[1]</a>&nbsp;This first law is the foundation of the fundamental concepts of&nbsp;<a href="https://en.wikipedia.org/wiki/Spatial_dependence">spatial dependence</a>&nbsp;and&nbsp;<a href="https://en.wikipedia.org/wiki/Spatial_autocorrelation">spatial autocorrelation</a>&nbsp;and is utilized specifically for the&nbsp;<a href="https://en.wikipedia.org/wiki/Inverse_distance_weighting">inverse distance weighting</a>&nbsp;method for&nbsp;<a href="https://en.wikipedia.org/wiki/Spatial_interpolation">spatial interpolation</a>&nbsp;and to support the&nbsp;<a href="https://en.wikipedia.org/wiki/Regionalized_variable_theory">regionalized variable theory</a>&nbsp;for&nbsp;<a href="https://en.wikipedia.org/wiki/Kriging">kriging</a>.<a href="https://en.wikipedia.org/wiki/Tobler's_first_law_of_geography#cite_note-2">[2]</a>&nbsp;The first law of geography is the fundamental assumption used in all&nbsp;<a href="https://en.wikipedia.org/wiki/Spatial_analysis">spatial analysis</a>.<a href="https://en.wikipedia.org/wiki/Tobler's_first_law_of_geography#cite_note-ref1-3">[3]</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Waldo_Tobler_2007.jpg" class="img-fluid figure-img"></p>
+<figcaption>Waldo</figcaption>
+</figure>
+</div>
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
 <p>Tobler first presented his seminal idea during a meeting of the&nbsp;<a href="https://en.wikipedia.org/wiki/International_Geographical_Union">International Geographical Union</a>’s Commission on Qualitative Methods held in 1969 and later published by him in 1970 in his publication “A Computer Movie Simulating Urban Growth in the Detroit Region”.<a href="https://en.wikipedia.org/wiki/Tobler's_first_law_of_geography#cite_note-Tobler1-1">[1]</a>&nbsp;In this paper Tobler created a model of the population growth in Detroit, and was discussing variables included within the model, and Tobler was probably not extremely serious when he originally invoked the first law and instead was explaining limitations brought about by computers of the 1970s.<a href="https://en.wikipedia.org/wiki/Tobler's_first_law_of_geography#cite_note-Tobler1-1">[1]</a><a href="https://en.wikipedia.org/wiki/Tobler's_first_law_of_geography#cite_note-ref1-3">[3]</a>&nbsp;He certainly did not think it would be as prominent in geography as it is today.<a href="https://en.wikipedia.org/wiki/Tobler's_first_law_of_geography#cite_note-ref1-3">[3]</a>&nbsp;Though simple in its presentation, this idea is profound. Without it, “the full range of conditions anywhere on the Earth’s surface could be packed within any small area. There would be no regions of approximately homogeneous conditions to be described by giving attributes to area objects. Topographic surfaces would vary chaotically, with infinite slopes everywhere, and the contours of such surfaces would be infinitely dense and contorted. Spatial analysis, and indeed life itself, would be impossible.”<a href="https://en.wikipedia.org/wiki/Tobler's_first_law_of_geography#cite_note-4">[4]</a></p>
@@ -819,27 +866,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>“The phenomenon external to an area of interest affects what goes on inside.”</p>
 <p>— Waldo Tobler</p>
 </blockquote>
-<section id="three-forms-of-spatial-interpolation." class="level3">
-<h3 class="anchored" data-anchor-id="three-forms-of-spatial-interpolation.">Three forms of spatial interpolation.</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Interpolation-nearest.svg/360px-Interpolation-nearest.svg.png" class="img-fluid figure-img"></p>
-<figcaption>Nearest neighbor</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Interpolation-bilinear.svg/360px-Interpolation-bilinear.svg.png" class="img-fluid figure-img"></p>
-<figcaption>Bilinear</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Interpolation-bicubic.svg/360px-Interpolation-bicubic.svg.png" class="img-fluid figure-img"></p>
-<figcaption>Bicubic</figcaption>
-</figure>
-</div>
-</section>
 </section>
 <section id="foundation" class="level2">
 <h2 class="anchored" data-anchor-id="foundation">Foundation</h2>
